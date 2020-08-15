@@ -25,8 +25,15 @@ def calculate_mean_pixel(img):
     # print(b)
     return [r, g, b]
 
-cap = cv2.VideoCapture('giphy.mp4')
-cap = cv2.VideoCapture('lick.mp4')
+cap = cv2.VideoCapture('only-man.mp4')
+# cap = cv2.VideoCapture('lick.mp4')
+# cap = cv2.VideoCapture('IMG_4998.MOV')
+# cap = cv2.VideoCapture('video_2020-08-16_00-37-23.mp4')
+# cap = cv2.VideoCapture('video_2020-08-16_00-42-02.mp4')
+# cap = cv2.VideoCapture('Family.Guy.S11E04.Yug.Ylimaf.720p.WEB-DL.x264-DLHA_www.Downloadha.com_.mkv')
+
+
+
 
 i = 0
 
@@ -99,10 +106,7 @@ data = np.zeros((height, width, 3), dtype=np.uint8)
 for pixel in range(0, width):
     data[:,pixel] = mean_array[pixel]
 
-
-
 img = Image.fromarray(data, 'RGB')
-
 max_width = 1000
 width = round(max_width/4)
 height = mean_array.shape[0]%max_width+max_width
