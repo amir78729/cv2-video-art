@@ -20,12 +20,14 @@ def calculate_mean_pixel(img):
     r = round(np.mean(img[0,:]))
     g = round(np.mean(img[1,:]))
     b = round(np.mean(img[2,:]))
-    print(r)
-    print(g)
-    print(b)
+    # print(r)
+    # print(g)
+    # print(b)
     return [r, g, b]
 
 cap = cv2.VideoCapture('giphy.mp4')
+cap = cv2.VideoCapture('lick.mp4')
+
 i = 0
 
 
@@ -46,10 +48,9 @@ i = 0
 
 # cv2.imshow('kjkj', calculate_mean_pixel(bw))
 
-
-data = np.zeros((100, 100, 3), dtype=np.uint8)
-
-
+resolution = 200
+data = np.zeros((resolution, resolution, 3), dtype=np.uint8)
+mean_array = np.array([[0, 0, 0]])
 while True:
     i += 1
     # print(i)
@@ -62,21 +63,17 @@ while True:
         array = np.array(blurred)
         # mean = np.mean(array)
         mean_pixel = calculate_mean_pixel(array)
-
-        # print(mean)
-
-        for pixel in range(100):
-            print(pixel)
+        for pixel in range(resolution):
+            # print(pixel)
             data[pixel] = mean_pixel
         result = Image.fromarray(data, 'RGB')
         result_name = 'resized_image.png'
         result.save(result_name)
-        im = cv2.imread(result_name)
-
-
+        average_frame = cv2.imread(result_name)
         # cv2.imshow('Video', blurred)
-        cv2.imshow('color', im)
-
+        cv2.imshow('color', average_frame)
+        # print(mean_pixel)
+        mean_array = np.append(mean_array, mean_pixel)
         # Press Q on keyboard to  exit
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break
@@ -85,7 +82,8 @@ while True:
 
 #save the new resized image in the same directory
 # data = np.zeros((h, w, 3), dtype=np.uint8)
-
+mean_array = np.reshape(mean_array, (-1, 3))
+print(mean_array)
 
 cap.release()
 cv2.destroyAllWindows()
