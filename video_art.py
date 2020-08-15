@@ -57,6 +57,7 @@ while True:
     ret, frame = cap.read()
     if ret == True:
         # print(np.mean(frame))
+        cv2.imshow('original video', frame)
         blurred = cv2.GaussianBlur(frame, (7,7), 0)
         # black_and_white = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
@@ -71,7 +72,7 @@ while True:
         result.save(result_name)
         average_frame = cv2.imread(result_name)
         # cv2.imshow('Video', blurred)
-        cv2.imshow('color', average_frame)
+        cv2.imshow('modified video', average_frame)
         # print(mean_pixel)
         mean_array = np.append(mean_array, mean_pixel)
         # Press Q on keyboard to  exit
@@ -83,7 +84,31 @@ while True:
 #save the new resized image in the same directory
 # data = np.zeros((h, w, 3), dtype=np.uint8)
 mean_array = np.reshape(mean_array, (-1, 3))
-print(mean_array)
+# print(mean_array)
+
+# max_width = 1000
+# width = mean_array.shape[0]%max_width+max_width
+# height = round(max_width/4)
+
+width = mean_array.shape[0]
+height = round(width/4)
+
+print(height, width)
+data = np.zeros((height, width, 3), dtype=np.uint8)
+# data[0:256, 0:256] = [255, 0, 0] # red patch in upper left
+for pixel in range(0, width):
+    data[:,pixel] = mean_array[pixel]
+
+
+
+img = Image.fromarray(data, 'RGB')
+
+max_width = 1000
+width = round(max_width/4)
+height = mean_array.shape[0]%max_width+max_width
+img = img.resize((height, width))
+img.save('The Art From the Video.jpg')
+img.show()
 
 cap.release()
 cv2.destroyAllWindows()
