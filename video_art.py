@@ -78,9 +78,17 @@ while True:
         result_name = 'resized_image.png'
         result.save(result_name)
         average_frame = cv2.imread(result_name)
-        # cv2.imshow('Video', blurred)
+        
+        # print color on frame
+        font = cv2.FONT_HERSHEY_SIMPLEX 
+        org = (40, 100) 
+        fontScale = 0.5
+        color = (255, 255, 255) 
+        thickness = 1
+        average_frame = cv2.putText(average_frame, '('+str(int(mean_pixel[0]))+','+str(int(mean_pixel[1]))+','+str(int(mean_pixel[2]))+')', org, font, fontScale, color, thickness, cv2.LINE_AA) 
+        #show frame
         cv2.imshow('modified video', average_frame)
-        # print(mean_pixel)
+
         mean_array = np.append(mean_array, mean_pixel)
         # Press Q on keyboard to  exit
         if cv2.waitKey(25) & 0xFF == ord('q'):
