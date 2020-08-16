@@ -26,6 +26,9 @@ After the video starts playing, besides the original video we can simultaneously
 This means that in the 88th frame of the video, the average color is `(124,119,139)` or ![#7C7788](https://via.placeholder.com/15/7C7788/000000?text=+) `#7C7788`; so the 88th vertical bar in the final picture has the color of `#7C7788`!
 
 You can also watch the process of the program in the timeline frame:
+<p align="center">
+  <img src="https://im7.ezgif.com/tmp/ezgif-7-d2c914fb3566.gif">
+</p>
 
 After the program detects all of the frames of the video and saves the average colors in a 2D array, then we can create our art:)
 <p align="center">
