@@ -26,7 +26,7 @@ def calculate_mean_pixel(img):
     return [r, g, b]
 
 cap = cv2.VideoCapture('only-man.mp4')
-cap = cv2.VideoCapture('giphy.mp4')
+# cap = cv2.VideoCapture('giphy.mp4')
 # cap = cv2.VideoCapture('IMG_4998.MOV')
 # cap = cv2.VideoCapture('video_2020-08-16_00-37-23.mp4')
 # cap = cv2.VideoCapture('video_2020-08-16_00-42-02.mp4')
@@ -90,18 +90,16 @@ while True:
         for pixel in range(resolution):
             data[pixel] = mean_pixel
         result = Image.fromarray(data, 'RGB')
-        result_name = 'resized_image.png'
+        result_name = 'frame-color.png'
         result.save(result_name)
         average_frame = cv2.imread(result_name)
-
         # print color on frame
-        font = cv2.FONT_HERSHEY_SIMPLEX 
+        font = cv2.FONT_HERSHEY_PLAIN 
         org = (20, 100) 
-        fontScale = 0.4
+        fontScale = 0.8
         color = (255, 255, 255) 
         thickness = 1
         average_frame = cv2.putText(average_frame, 'frame #' + str(i) + ': (' + str(int(mean_pixel[0])) + ',' + str(int(mean_pixel[1])) + ',' + str(int(mean_pixel[2])) + ')', org, font, fontScale, color, thickness, cv2.LINE_AA) 
-        #show frame
         cv2.imshow('modified video', average_frame)
 
         mean_array = np.append(mean_array, mean_pixel)
@@ -121,14 +119,18 @@ while True:
         demo_array[:,i - 1] = mean_array[i]
         demo_image = Image.fromarray(demo_array, 'RGB')
         demo_image_resized = demo_image.resize((image_height, image_width))
-        demo_image_resized.save('timeline.jpg')
-        timeline = cv2.imread('timeline.jpg')
+        result_name = 'timeline.png'
+        demo_image_resized.save(result_name)
+        timeline = cv2.imread(result_name)
         # open_cv_image = np.array(demo_image_resized) 
-
-
-
-        
-        timeline = timeline[:, :, ::-1].copy() 
+        # timeline = timeline[:, :, ::-1].copy() 
+        percentage = str(100*i/total_frames) + '%'
+        font = cv2.FONT_HERSHEY_PLAIN 
+        org = (int(image_height/2)-100, int(image_width/2)) 
+        fontScale = 2
+        color = (255, 255, 255) 
+        thickness = 1
+        timeline = cv2.putText(timeline, percentage, org, font, fontScale, color, thickness, cv2.LINE_AA) 
         cv2.imshow('timeline', timeline)
 
         # Press Q on keyboard to  exit
