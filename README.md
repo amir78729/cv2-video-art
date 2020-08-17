@@ -7,6 +7,9 @@
 
 - [Install](#Install)
 - [How does it work](#How-Does-It-Work)
+  - [Frame information](#Frame-information)
+  - [Timeline](#timeline)
+  - [Output](#output)
 - [Other examples](#Other-Examples)
 
 ---
@@ -26,13 +29,11 @@ pip install cv2
 
 ### How does it work?
 
-#### Process:
-
 This program uses an input video and then it creates an image from every frame of the input video. Every vertical bar of the output image has a color that is calculated from the average color of each pixel of the frame. for example, we use this video as an input for our program(You can click on the image to watch it!):
 
 [![sample-video](https://cdn.discordapp.com/attachments/732234196487241741/744582984539046008/unknown.png)](https://www.youtube.com/watch?v=9yD0KEi554c)
 
-
+#### Frame information:
 
 After the video starts playing, besides the original video we can simultaneously see the frame average color and also the frame number:
 
@@ -41,6 +42,8 @@ After the video starts playing, besides the original video we can simultaneously
 </p>
 
 This means that in the 88th frame of the video, the average color is `(124,119,139)` or ![#7C7788](https://via.placeholder.com/15/7C7788/000000?text=+) `#7C7788`; so the 88th vertical bar in the final picture has the color of `#7C7788`!
+
+#### Timeline
 
 You can also watch the process of the program in the timeline frame:
 <p align="center">
