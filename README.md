@@ -31,24 +31,29 @@ This means that in the 88th frame of the video, the average color is `(124,119,1
 
 You can also watch the process of the program in the timeline frame:
 <p align="center">
-  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744799641165496420/ezgif-7-d2c914fb3566.gif" alt="timeline" width="600" height="120">
+  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744799641165496420/ezgif-7-d2c914fb3566.gif" alt="timeline" width="2000" height="200">
 </p>
 
 ### output:
 
 After the program detects all of the frames of the video and saves the average colors in a 2D array, then we can create our art:)
 <p align="center">
- <img src="https://cdn.discordapp.com/attachments/732234196487241741/744590609943363604/only-man.jpg" alt="vid-art" width="600" height="120">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744590609943363604/only-man.jpg" alt="vid-art" width="2000" height="200">
 </p>
 
 ### other examples:
 Here are some other pictures that are created from other input videos:
 #### _Family Guy: Season 11, Episode 4_
 <p align="center">
- <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="600" height="120">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="2000" height="200">
 </p>
 
 #### _Rick and Morty: Season 4, Episode 9_
 <p align="center">
- <img src="https://cdn.discordapp.com/attachments/732234196487241741/744815071296749648/VID-ART.jpg" alt="vid-art" width="600" height="120">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744815071296749648/VID-ART.jpg" alt="vid-art" width="2000" height="200">
+</p>
+
+#### _Money Heist: Season 3, Episode 1_
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744831064752652298/VID-ART.jpg" alt="vid-art" width="2000" height="200">
 </p>
