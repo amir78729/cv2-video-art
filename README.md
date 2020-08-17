@@ -42,3 +42,8 @@ After the program detects all of the frames of the video and saves the average c
 </p>
 
 ### other examples:
+Here are some other pictures that are created from other input videos:
+#### _Family Guy: Season 11, Episode 4_
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="600" height="120">
+</p>
