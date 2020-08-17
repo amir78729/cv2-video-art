@@ -47,3 +47,8 @@ Here are some other pictures that are created from other input videos:
 <p align="center">
  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="600" height="120">
 </p>
+
+#### _Rick and Morty: Season 4, Episode 9_
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744815071296749648/VID-ART.jpg" alt="vid-art" width="600" height="120">
+</p>
