@@ -1,6 +1,17 @@
 # VID-ART
- _Creating an image from an input video's frames_
-## Install
+ > _Creating an image from an input video's frames_
+ 
+ ---
+ 
+## Table of Contents
+
+- [Install](##Install)
+- [HowDoesItWork](##HowDoesItWork)
+- [OtherExamples](##OtherExamples)
+
+---
+
+### Install
 
 This project uses [NumPy](https://numpy.org) and [cv2](https://opencv.org). Go check them out if you don't have them locally installed.
 
@@ -11,9 +22,11 @@ pip install numpy
 ```sh
 pip install cv2
 ```
-## How does it work?
+---
 
-### process:
+### How does it work?
+
+#### Process:
 
 This program uses an input video and then it creates an image from every frame of the input video. Every vertical bar of the output image has a color that is calculated from the average color of each pixel of the frame. for example, we use this video as an input for our program(You can click on the image to watch it!):
 
@@ -34,14 +47,16 @@ You can also watch the process of the program in the timeline frame:
   <img src="https://cdn.discordapp.com/attachments/732234196487241741/744799641165496420/ezgif-7-d2c914fb3566.gif" alt="timeline" width="2000" height="200">
 </p>
 
-### output:
+#### Output:
 
 After the program detects all of the frames of the video and saves the average colors in a 2D array, then we can create our art:)
 <p align="center">
  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744590609943363604/only-man.jpg" alt="vid-art" width="2000" height="200">
 </p>
 
-### other examples:
+---
+
+### Other examples:
 Here are some other pictures that are created from other input videos:
 #### _Family Guy: Season 11, Episode 4_
 <p align="center">
