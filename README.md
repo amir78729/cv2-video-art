@@ -6,8 +6,8 @@
 ## Table of Contents
 
 - [Install](#Install)
-- [HowDoesItWork](#HowDoesItWork)
-- [OtherExamples](#OtherExamples)
+- [How does it work](#How-Does-It-Work)
+- [Other examples](#Other-Examples)
 
 ---
 
