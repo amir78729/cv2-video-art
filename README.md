@@ -5,9 +5,9 @@
  
 ## Table of Contents
 
-- [Install](##Install)
-- [HowDoesItWork](##HowDoesItWork)
-- [OtherExamples](##OtherExamples)
+- [Install](#Install)
+- [HowDoesItWork](#HowDoesItWork)
+- [OtherExamples](#OtherExamples)
 
 ---
 
