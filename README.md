@@ -1,8 +1,6 @@
 # VID-ART
  > _Creating an image from an input video's frames_
- 
- ---
- 
+  
 ## Table of Contents
 
 - [Install](#Install)
