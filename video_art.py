@@ -47,7 +47,7 @@ demo_image = Image.fromarray(demo_array, 'RGB')
 demo_image_resized = demo_image.resize((image_height, image_width))
 # demo_image_resized.show()
 
-resolution = 500
+resolution = 250
 demo_frame_color = np.zeros((resolution, resolution, 3), dtype=np.uint8)
 mean_array = np.array([[0, 0, 0]])
 
@@ -74,8 +74,8 @@ while True:
         average_frame = cv2.imread(result_name)
 
         font = cv2.FONT_HERSHEY_PLAIN 
-        org = (20, 100) 
-        fontScale = 0.8
+        org = (int(resolution/10), int(resolution/2)) 
+        fontScale = 0.9
         color = (255, 255, 255) 
         thickness = 1
         average_frame = cv2.putText(average_frame, 'frame #' + str(frame_index) + ': (' + str(int(mean_pixel[0])) + ',' + str(int(mean_pixel[1])) + ',' + str(int(mean_pixel[2])) + ')', org, font, fontScale, color, thickness, cv2.LINE_AA) 
