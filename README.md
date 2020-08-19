@@ -59,6 +59,7 @@ After the program detects all of the frames of the video and saves the average c
  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744590609943363604/only-man.jpg" alt="vid-art" width="2000" height="100">
 </p>
 
+> ℹ For enhancing the speed of the process, you can comment the **frame color** and **timeline** sections.
 ---
 
 ### Other examples:
