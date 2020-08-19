@@ -2,6 +2,9 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
 def calculate_mean_pixel(img):    
     img = img.transpose()
     r = round(np.mean(img[0,:]))
@@ -10,7 +13,13 @@ def calculate_mean_pixel(img):
     return [r, g, b]
 
 #input video (change it!)
-video_name = 'only-man.mp4'
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+video_name = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+print(video_name)
+
+# video_name = 'only-man.mp4'
+# video_name = 'Chernobyl.S01E05.720p.x265.HEVC.mkv'
+# video_name = 'Family.Guy.S11E04.Yug.Ylimaf.720p.WEB-DL.x264-DLHA_www.Downloadha.com_.mkv'
 cap = cv2.VideoCapture(video_name)
 
 total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -37,6 +46,7 @@ while True:
     frame_index += 1
     ret, frame = cap.read()
     if ret == True:
+        # print(frame_index)
         # original video
         cv2.imshow('original-video', frame)
 
@@ -54,29 +64,29 @@ while True:
         result.save(result_name)
         average_frame = cv2.imread(result_name)
 
-        font = cv2.FONT_HERSHEY_PLAIN 
-        org = (20, 100) 
-        fontScale = 0.8
-        color = (255, 255, 255) 
-        thickness = 1
-        average_frame = cv2.putText(average_frame, 'frame #' + str(frame_index) + ': (' + str(int(mean_pixel[0])) + ',' + str(int(mean_pixel[1])) + ',' + str(int(mean_pixel[2])) + ')', org, font, fontScale, color, thickness, cv2.LINE_AA) 
+        # font = cv2.FONT_HERSHEY_PLAIN 
+        # org = (20, 100) 
+        # fontScale = 0.8
+        # color = (255, 255, 255) 
+        # thickness = 1
+        # average_frame = cv2.putText(average_frame, 'frame #' + str(frame_index) + ': (' + str(int(mean_pixel[0])) + ',' + str(int(mean_pixel[1])) + ',' + str(int(mean_pixel[2])) + ')', org, font, fontScale, color, thickness, cv2.LINE_AA) 
         cv2.imshow('frame-color', average_frame)
 
-        #timeline        
-        demo_array[:,frame_index - 1] = mean_array[frame_index]
-        demo_image = Image.fromarray(demo_array, 'RGB')
-        demo_image_resized = demo_image.resize((image_height, image_width))
-        result_name = 'timeline.png'
-        demo_image_resized.save(result_name)
-        timeline = cv2.imread(result_name)
-        percentage = str(100 * frame_index / total_frames) + '%'
-        font = cv2.FONT_HERSHEY_PLAIN 
-        org = (int(image_height / 2)-100, int(image_width / 2)) 
-        fontScale = 2
-        color = (255, 255, 255) 
-        thickness = 1
-        timeline = cv2.putText(timeline, percentage, org, font, fontScale, color, thickness, cv2.LINE_AA) 
-        cv2.imshow('timeline', timeline)
+        # #timeline        
+        # demo_array[:,frame_index - 1] = mean_array[frame_index]
+        # demo_image = Image.fromarray(demo_array, 'RGB')
+        # demo_image_resized = demo_image.resize((image_height, image_width))
+        # result_name = 'timeline.png'
+        # demo_image_resized.save(result_name)
+        # timeline = cv2.imread(result_name)
+        # percentage = str(100 * frame_index / total_frames) + '%'
+        # font = cv2.FONT_HERSHEY_PLAIN 
+        # org = (int(image_height / 2)-100, int(image_width / 2)) 
+        # fontScale = 2
+        # color = (255, 255, 255) 
+        # thickness = 1
+        # timeline = cv2.putText(timeline, percentage, org, font, fontScale, color, thickness, cv2.LINE_AA) 
+        # cv2.imshow('timeline', timeline)
 
         # Press Q on keyboard to  exit
         if cv2.waitKey(25) & 0xFF == ord('q'):
