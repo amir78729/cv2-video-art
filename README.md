@@ -16,10 +16,14 @@
 
 ### Install
 
-This project uses [NumPy](https://numpy.org) and [cv2](https://opencv.org). Go check them out if you don't have them locally installed.
+This project uses [NumPy](https://numpy.org), [tkinter](https://docs.python.org/3/library/tkinter.html) and [cv2](https://opencv.org). Go check them out if you don't have them locally installed.
 
 ```sh
 pip install numpy
+```
+
+```sh
+pip install tkinter
 ```
 
 ```sh
