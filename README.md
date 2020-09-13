@@ -64,6 +64,8 @@ After the program detects all of the frames of the video and saves the average c
 
 ### Other examples:
 Here are some other pictures that are created from other input videos:
+
+<!--
 ###### _Family Guy: Season 11, Episode 4_
 <p align="center">
  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="2000" height="100">
@@ -78,3 +80,31 @@ Here are some other pictures that are created from other input videos:
 <p align="center">
  <img src="https://cdn.discordapp.com/attachments/732234196487241741/744831064752652298/VID-ART.jpg" alt="vid-art" width="2000" height="100">
 </p>
+
+-->
+
+<details><summary> Family Guy: Season 11, Episode 4 </summary>
+<p>
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744804843801149480/unknown.png" alt="vid-art" width="2000" height="100">
+</p>
+</p>
+</details>
+
+
+<details><summary> Rick and Morty: Season 4, Episode 9 </summary>
+<p>
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744815071296749648/VID-ART.jpg" alt="vid-art" width="2000" height="100">
+</p>
+</p>
+</details>
+
+
+<details><summary> Money Heist: Season 3, Episode 1 </summary>
+<p>
+<p align="center">
+ <img src="https://cdn.discordapp.com/attachments/732234196487241741/744831064752652298/VID-ART.jpg" alt="vid-art" width="2000" height="100">
+</p>
+</p>
+</details>
